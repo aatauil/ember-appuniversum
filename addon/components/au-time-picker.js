@@ -7,7 +7,7 @@ export default class AuTimePickerComponent extends Component {
   @tracked minuteValue = 0;
   @tracked secondValue = 0;
 
-  @tracked keyCodes = [ 8 , 13 , 33, 32 , 34 , 38, 40, 46 ]
+  @tracked keyCodes = [ 8 , 13 , 33 , 34 , 37, 38,39, 40, 46 ]
 
   @action increment(elem){ 
 
@@ -50,9 +50,8 @@ export default class AuTimePickerComponent extends Component {
   // Keyboard input
 
   @action setTimeValue(e){
-    console.log(isNaN(e.key))
-    console.log(isNaN(e.key) && this.keyCodes.indexOf(e.keyCode) == -1 )
-    if(isNaN(e.key) && this.keyCodes.indexOf(e.keyCode) == -1 ){
+
+    if(isNaN(parseFloat(e.key)) && this.keyCodes.indexOf(e.keyCode) == -1 ){
       console.log(e)
       e.preventDefault();
     } else {
