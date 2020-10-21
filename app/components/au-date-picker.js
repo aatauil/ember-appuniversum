@@ -1,1 +1,1 @@
-export { default } from '@appuniversum/ember-appuniversum/components/au-date-picker';
+export { default } from '@appuniversum/ember-appuniversum/components/au-dateTime-picker';
