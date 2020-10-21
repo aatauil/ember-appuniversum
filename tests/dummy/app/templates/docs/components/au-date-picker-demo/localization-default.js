@@ -5,7 +5,7 @@ import { tracked } from "@glimmer/tracking";
 export default class localizationDefault extends Component {
 
 
-    // BEGIN-SNIPPET au-date-picker.js
+    // BEGIN-SNIPPET au-dateTime-picker.js
 
 // Default values
 @tracked localization = {
