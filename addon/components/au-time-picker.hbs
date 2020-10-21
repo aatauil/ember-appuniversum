@@ -1,36 +1,43 @@
 <div class="au-time-picker">
-  <label for="time">Time input</label>
-  <div class="au-time">
-    <div class="au-time__input-wrapper">
-      <input type="text" class="au-time__input">
-      <button type="button" class="au-time__toggle">
-        <svg class="au-time__toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <span class="au-time__vhidden">
-          "choose time"
-          <span>Selected time is 13:43:24</span>
-        </span>
-      </button>
-      <div class="au-time__dialog">
-        <div class="au-time__dialog-content">
-          <div class="time-input_li">
-            <label for="hours"></label>
-            <input id="hours" class="time-input_single" type="number" value="1" name="" id="">
-          </div>
-          <div class="time-input_li">
-            <label for="minutes"></label>
-            <input id="minutes" class="time-input_single" type="number" value="1" name="" id="">
-          </div>
-          <div class="time-input_li">
-            <label for="seconds"></label>
-            <input id="seconds" class="time-input_single" type="number" value="1" name="" id="">
-          </div>
+  <div class="au-time-picker_wrapper">
+
+    <div class="au-time-picker_box">
+      <label class="au-time-picker_label" for="">Hours</label>
+      <div class="au-time-picker_input-wrapper">
+        <input class="au-time-picker_input" value={{format-time this.hourValue}}  {{on 'keydown' this.setTimeValue}} name="" id=""/>
+        <div class="au-time-picker_button-wrapper">
+          <button type="button" aria-label="increment hours" {{on 'click' (fn this.increment "hourValue")}}  class="au-time-picker_button">+</button>
+          <button type="button" aria-label="decrement hours" {{on 'click' (fn this.decrement "hourValue")}} class="au-time-picker_button">-</button>
         </div>
       </div>
     </div>
-  </div>
 
+    <span class="au-time-picker_seperator">:</span>
+
+    <div class="au-time-picker_box">
+      <label class="au-time-picker_label" for="">Minutes</label>
+      <div class="au-time-picker_input-wrapper">
+        <Input class="au-time-picker_input" value={{format-time this.minuteValue}} @type="number" name="" id=""/>
+        <div class="au-time-picker_button-wrapper">
+          <button aria-label="increment minutes" {{on 'click' (fn this.increment "minuteValue")}} type="button" class="au-time-picker_button">+</button>
+          <button aria-label="decrement minutes" {{on 'click' (fn this.decrement "minuteValue")}} type="button" class="au-time-picker_button">-</button>
+        </div>
+      </div>
+    </div>
+
+    <span class="au-time-picker_seperator">:</span>
+
+    <div class="au-time-picker_box">
+      <label class="au-time-picker_label" for="">Seconds</label>
+      <div class="au-time-picker_input-wrapper">
+        <Input class="au-time-picker_input" value={{format-time this.secondValue}} @type="number" name="" id=""/>
+        <div class="au-time-picker_button-wrapper">
+          <button aria-label="increment seconds" {{on 'click' (fn this.increment "secondValue")}} type="button" class="au-time-picker_button">+</button>
+          <button aria-label="decrement seconds" {{on 'click' (fn this.decrement "secondValue")}} type="button" class="au-time-picker_button">-</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <span>your current time is {{format-time this.hourValue}} : {{format-time this.minuteValue}} : {{format-time this.secondValue}} </span>
 </div>
