@@ -1,10 +1,13 @@
-<div class="au-dateTime-picker">
+<div class="au-dateTime-picker"  >
   {{#if @label}}
     <label for="date">{{@label}}</label>
   {{/if}}
 
-  <duet-date-picker {{prop localization=this.localization}} {{prop dateAdapter=this.adapter}} adapter={{@adapter}} localization={{@localization}} disabled={{@disabled}} buttonLabel={{@buttonLabel}} identifier={{@id}} value={{@value}} min={{@min}} max={{@max}} first-day-of-week={{@first-day}} ...attributes>
 
-  </duet-date-picker>
-  <AuTimePicker/>
+  <duet-date-picker  {{move-time-node}} {{prop localization=this.localization}} {{prop dateAdapter=this.adapter}} adapter={{@adapter}} localization={{@localization}} disabled={{@disabled}} buttonLabel={{@buttonLabel}} identifier={{@id}} value={{@value}} min={{@min}} max={{@max}} first-day-of-week={{@first-day}} ...attributes>
+    <AuTimePicker />
+  </duet-date-picker > 
+
+
+
 </div>

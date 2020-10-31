@@ -82,7 +82,4 @@ export default class AuDatePickerComponent extends Component {
       }
     }
   }
-
-
-
 }

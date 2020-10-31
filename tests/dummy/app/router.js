@@ -36,7 +36,8 @@ Router.map(function() {
       this.route("au-modal");
       this.route("au-data-table");
       this.route("ember-power-select");
-      this.route("au-date-picker")
+      this.route("au-dateTime-picker");
+      this.route("au-time-picker");
     });
 
     this.route("patterns", function() {
@@ -56,6 +57,7 @@ Router.map(function() {
   this.route('atoms', function() {
     this.route('au-badge');
   });
+  this.route('testing');
 });
 
 export default Router;
